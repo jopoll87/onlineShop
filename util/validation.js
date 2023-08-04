@@ -1,12 +1,14 @@
-const isEmpty = (value) => {
-  return !value || value.trim === "";
-};
+function isEmpty(value) {
+  return !value || value.trim() === '';
+}
 
-const userCredentialsAreValid = (email, password) => {
-  return email && email.includes("@") && password && password.trim().length > 5;
-};
+function userCredentialsAreValid(email, password) {
+  return (
+    email && email.includes('@') && password && password.trim().length >= 6
+  );
+}
 
-const userDetailsAreValid = (email, password, name, street, postal, city) => {
+function userDetailsAreValid(email, password, name, street, postal, city) {
   return (
     userCredentialsAreValid(email, password) &&
     !isEmpty(name) &&
@@ -14,11 +16,11 @@ const userDetailsAreValid = (email, password, name, street, postal, city) => {
     !isEmpty(postal) &&
     !isEmpty(city)
   );
-};
+}
 
-const emailIsConfirmed = (email, confirmEmail) => {
+function emailIsConfirmed(email, confirmEmail) {
   return email === confirmEmail;
-};
+}
 
 module.exports = {
   userDetailsAreValid: userDetailsAreValid,

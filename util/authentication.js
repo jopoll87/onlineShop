@@ -1,14 +1,15 @@
-const createUserSession = (req, user, action) => {
+function createUserSession(req, user, action) {
     req.session.uid = user._id.toString();
     req.session.isAdmin = user.isAdmin;
     req.session.save(action);
-}
-
-const destroyUserAuthSession = (req) => {
+  }
+  
+  function destroyUserAuthSession(req) {
     req.session.uid = null;
-}
-
-module.exports = {
+  }
+  
+  module.exports = {
     createUserSession: createUserSession,
-    destroyUserAuthSession: destroyUserAuthSession,
-}
+    destroyUserAuthSession: destroyUserAuthSession
+  };
+  

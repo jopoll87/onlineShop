@@ -1,6 +1,6 @@
 <%- include('../../shared/includes/head', { pageTitle: 'Signup' }) %>
- <link rel="stylesheet" href="/styles/forms.css">
- <link rel="stylesheet" href="/styles/auth.css">
+  <link rel="stylesheet" href="/styles/forms.css">
+  <link rel="stylesheet" href="/styles/auth.css">
 </head>
 <body>
   <%- include('../../shared/includes/header') %>
@@ -24,7 +24,7 @@
       </p>
       <p>
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" value="<%= inputData.password %>" minlength="6" required>
+        <input type="password" id="password" name="password" minlength="6" value="<%= inputData.password %>" required>
       </p>
       <hr>
       <p>
@@ -40,10 +40,10 @@
         <input 
           type="text" 
           id="postal" 
-          name="postal"
-          value="<%= inputData.postal %>"
+          name="postal" 
           minlength="5" 
           maxlength="5" 
+          value="<%= inputData.postal %>"
           required>
       </p>
       <p>
